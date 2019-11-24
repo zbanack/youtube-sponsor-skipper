@@ -1,5 +1,5 @@
 # youtube-sponsor-skipper
-Browser extension that skips through YouTube in-video sponsored segments using defined trigger words.
+Browser extension that skips through YouTube in-video sponsored segments by comparing closed captions against defined trigger words.
 
 ## How it works
 - Ever n seconds read the video captions
