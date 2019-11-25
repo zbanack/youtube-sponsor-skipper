@@ -1,0 +1,28 @@
+{
+  "name": "Sponsor Skipper",
+  "short_name": "Skipper",
+  "description": "Skips through YouTube in-video sponsored segments by comparing closed captions against defined trigger words.",
+  "version": "1.0",
+    "content_scripts": [
+      {
+        "matches": [
+          "https://www.youtube.com/*", "https://youtube.com/*", "http://youtube.com/*", "http://www.youtube.com/*"
+        ],
+        "js": ["content.js"],
+        "run_at": "document_end"
+      }
+    ],
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+"icons": { "32": "/images/icons-32.png",
+           "192": "/images/icons-192.png",
+          "512": "/images/icons-512.png" },
+  "browser_action": {
+      "default_title": "Skips through YouTube in-video sponsored segments by comparing closed captions against defined trigger words.",
+      "default_icon": "/images/icons-32.png",
+      "default_popup": "index.html"
+  },
+  "manifest_version": 2
+}
