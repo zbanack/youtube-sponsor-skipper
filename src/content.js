@@ -47,7 +47,7 @@ window.onload = function() {
 	// save timestamp of most recently-encountered persistence word
 	let = sponsor_ends_at_div = document.createElement("div");
 	sponsor_ends_at_div.setAttribute("id", "__sponsor_ends_at__");
-	sponsor_ends_at_div.innerHTML = "1";
+	sponsor_ends_at_div.innerHTML = "0";
 
 	// save timestamp of most recently-encountered persistence word
 	let = persistent_happening_div = document.createElement("div");
@@ -225,8 +225,13 @@ function skip_ahead(direction) {
 		var pulled_direction = document.getElementById("__temp_direction__").innerHTML;
 
 		// generic fast forward/rewind
-		if (pulled_direction.toString().length>0) 
+		if (pulled_direction.toString().length>0 || seek_time<1) {
 			seek_time = current_time+parseInt(document.getElementById("__seconds_to_skip__").innerHTML * pulled_direction);
+		}
+		else {
+			// reset seek time
+			document.getElementById("__sponsor_ends_at__").innerHTML = "0";
+		}
 
 	   ytplayer.seekTo(seek_time);
 	} + ")();";
